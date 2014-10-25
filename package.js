@@ -1,5 +1,8 @@
 Package.describe({
-  summary: "Sort, page, and filter millions of records. Reactively."
+  summary: "Sort, page, and filter millions of records. Reactively.",
+  version: '0.0.1',
+  name: "menway:jquery-datatables",
+  git: 'https://github.com/menway/meteor-jquery-datatables'
 });
 
 Package.on_use(function (api, where) {
