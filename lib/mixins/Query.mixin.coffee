@@ -23,7 +23,8 @@ DataTableMixins.Query =
         setQuery: ( query ) ->
           if @subscription
             @prepareQuery() unless @query
-            unless @query() is query
+            # unless @query() is query
+            if true
               @query query
               @rendered()
 

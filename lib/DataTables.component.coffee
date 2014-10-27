@@ -27,14 +27,16 @@ class DataTableComponent extends Component
 
   # ##### rendered()
   rendered: ->
-    if Meteor.isClient
-      @$ = $("#{ @selector() } table").dataTable @options()
-      @log "$", @$
-      @initializeFilterPlaceholder()
-      # TODO : footer filters
-      # @initializeFooterFilter()
-      @initializeDisplayLength()
-    super
+    setTimeout ->
+      if Meteor.isClient
+        @$ = $("#{ @selector() } table").dataTable @options()
+        @log "$", @$
+        @initializeFilterPlaceholder()
+        # TODO : footer filters
+        # @initializeFooterFilter()
+        @initializeDisplayLength()
+      super
+    , 0
 
   # ##### destroyed()
   destroyed: ->
@@ -72,7 +74,9 @@ if Meteor.isClient
 
   # ##### created()
   # This is the component constructor.
-  Template.DataTable.created = -> new DataTableComponent @
+  Template.DataTable.created = ->
+    @.__component__ = @.__view__
+    dataTableInstance = new DataTableComponent @
 
   # ##### DataTable Plugin fnGetComponent()
   $.fn.dataTableExt.oApi.fnGetComponent = ->

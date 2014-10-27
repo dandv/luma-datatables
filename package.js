@@ -1,15 +1,17 @@
 Package.describe({
   summary: "Sort, page, and filter millions of records. Reactively.",
-  version: '1.0.5',
+  version: '1.0.5_4',
   name: "menway:jquery-datatables",
   git: 'https://github.com/menway/meteor-jquery-datatables'
 });
 
 Package.on_use(function (api, where) {
+  api.versionsFrom("METEOR@0.9.0");
+
   api.use([
-    'coffeescript',
-    'underscore',
-    'luma-component'
+    'coffeescript@1.0.4',
+    'underscore@1.0.1',
+    'menway:luma-component@1.0.5'
   ],[ 'client', 'server' ]);
 
   // for helpers
@@ -57,7 +59,7 @@ Package.on_use(function (api, where) {
 Package.on_test(function (api) {
   api.use([
     'coffeescript',
-    'jquery-datatables',
+    'menway:jquery-datatables',
     'tinytest',
     'test-helpers'
   ], ['client', 'server']);

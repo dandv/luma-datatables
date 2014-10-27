@@ -1,3 +1,9 @@
+forked from https://github.com/lumapictures/meteor-jquery-datatables
+
+```
+This package is still under development, not ready for use yet!
+```
+
 # jQuery DataTables [![Build Status](https://travis-ci.org/LumaPictures/meteor-jquery-datatables.svg?branch=dev)](https://travis-ci.org/LumaPictures/meteor-jquery-datatables)
 ### Sort, page, and filter millions of records.
 #### Reactively.
